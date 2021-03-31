@@ -463,7 +463,7 @@ exports.shapeArea = function(hideMargin, zoom, size) {
 	    }
 	}
     }
-	console.log('1');
+	console.log('2');
     return [offsetX, offsetY, lX, lY];
 }
 
