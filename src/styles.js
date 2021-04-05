@@ -52,6 +52,10 @@ exports.Themes = {
 	return `
 	    .wood { 
 		fill: #b4916c; 
+			}
+			.redMarker {
+		stroke: red !important;
+		fill: red !important;
 	    }
 	    .placeholder { 
 		stroke: black;
