@@ -24,7 +24,19 @@ var SV_BW = {
     "white": {
 	"start" : "rgb(255,255,255)", 
 	"stop"  : "rgb(180,180,180)"
-    }
+    },
+    "red": {
+			"start" : "rgb(237,25,85,0.3715861344537815)", 
+			"stop"  : "rgb(255,0,84,1)"
+		},
+    "green": {
+			"start" : "rgb(156,237,25,0.3715861344537815)", 
+			"stop"  : "rgb(63,255,0,1)"
+		},
+    "blue": {
+			"start" : "rgb(25,177,237,0.3715861344537815)", 
+			"stop"  : "rgb(0,114,255,1)"
+		},
 };
 
 exports.defineRadialColors = function(color) {
@@ -60,6 +72,24 @@ exports.Themes = {
 	    }
 	    .whitestone { 
 		fill: url(#whitegrad);
+	    }
+	    .redstone { 
+				fill: url(#redgrad) !important;
+				stroke: none !important;
+				opacity: 0.5;
+				r: 4%;
+			}
+			.greenstone { 
+				fill: url(#greengrad) !important;
+				stroke: none !important;
+				opacity: 0.5;
+				r: 4%;
+			}
+			.bluestone { 
+				fill: url(#bluegrad) !important;
+				stroke: none !important;
+				opacity: 0.5;
+				r: 4%;
 	    }
 	    .onblack {
 		stroke: white;
