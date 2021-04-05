@@ -77,6 +77,13 @@ var _addMarkersLayer = function(str, size, markers, pos) {
     return str;
 }
 
+var _addMapLayer = function(str, size, markers, pos) {
+    str += '<g class="map_layer">'
+    str +=   _toElem(Geo.mapMarkers(size, markers, pos));
+    str += '</g>'
+    return str;
+}
+
 var _addLettersLayer = function(str, size, coordSystem) {
     str += '<g class="labels_layer">'
     str +=   _toElem(Geo.shapeLabels(size, coordSystem));
@@ -134,6 +141,7 @@ var serializeSVG = function(config, pos, markers) {
     str = _addStarPointsLayer(str, size);
     str = _addStonesLayer(str, size, pos);
     str = _addMarkersLayer(str, size, markers, pos);
+    str = _addMapLayer(str, size, markers, pos);
     str += '</g>';
     str += '</svg>';
     return str;
