@@ -339,7 +339,7 @@ exports.shapeStone = function(size, intersection, color) {
  * @param {Object} positions as key-value pairs of coordinates and colors
  * @returns {Array}
  */
-exports.shapeMarkers = function(size, markers, positions) {
+exports.shapeMarkers = function(size, markers, positions, className) {
     size = +size;
     var step = SV_GRID_SIZE / (size + 1);
     var x, y, x1, y1, x2, y2, cls, points;
@@ -353,7 +353,7 @@ exports.shapeMarkers = function(size, markers, positions) {
 	y = SV_MARGIN + rowcol.j * step;
 
 	if ("cross" == markers[k]) {
-	    cls = markers[k] + " on" + (positions[k] || "white");
+	    cls = markers[k] + ' ' + className[k] + " on" + (positions[k] || "white");
 	    x1 = x - step / SV_MARKER;
 	    y1 = y;
 	    x2 = x + step / SV_MARKER;
@@ -367,12 +367,12 @@ exports.shapeMarkers = function(size, markers, positions) {
 	    ret.push({type:"line", x1:x1, y1:y1, x2:x2, y2:y2, class:cls, transform:rot});
 
 	} else if ("circle" == markers[k]) {
-	    cls = markers[k] + " on" + (positions[k] || positions[other(k, size)] || "white");
+	    cls = markers[k] + ' ' + className[k] + " on" + (positions[k] || positions[other(k, size)] || "white");
 	    r = step / 3.5;
 	    ret.push({type:"circle", cx:x, cy:y, r:r, class:cls });
 
 	} else if ("square" == markers[k]) {
-	    cls = markers[k] + " on" + (positions[k] || "white");
+	    cls = markers[k] + ' ' + className[k] + " on" + (positions[k] || "white");
 	    var delta = step / SV_MARKER * Math.cos(Math.PI / 4);
 	    var side = 2 * delta;
 	    x1 = x - delta;
@@ -380,7 +380,7 @@ exports.shapeMarkers = function(size, markers, positions) {
 	    ret.push({type:"rect", x:x1, y:y1, width:side, height:side, class:cls});
 
 	} else if ("triangle" == markers[k]) {
-	    cls = markers[k] + " on" + (positions[k] || "white");
+	    cls = markers[k] + ' ' + className[k] + " on" + (positions[k] || "white");
 	    x1 = x;
 	    y1 = y - step / SV_MARKER;
 	    x2 = x + step / SV_MARKER * Math.cos(Math.PI / 2 + 2 * Math.PI / 3);
@@ -463,7 +463,6 @@ exports.shapeArea = function(hideMargin, zoom, size) {
 	    }
 	}
     }
-	console.log('2');
     return [offsetX, offsetY, lX, lY];
 }
 
