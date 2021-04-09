@@ -111,8 +111,8 @@ exports.shapeBackground = function(noMargin) {
 	offset = SV_MARGIN + SV_BORDER_SHRINK;
 	sz = SV_GRID_SIZE - 2*SV_BORDER_SHRINK;
     } else {
-	offset = 0;
-	sz = SV_GRID_SIZE + 2*SV_MARGIN;
+	offset = 30;
+	sz = SV_GRID_SIZE + 2*SV_MARGIN - 60;
     }
     ret.push({type:"rect", class:cls, x:offset, y:offset, width:sz, height:sz});
     return ret;
@@ -228,7 +228,7 @@ exports.shapeLabels = function(size, coordSystem) {
 
 	/** Top row */
 	x = SV_MARGIN + i * step;
-	y = SV_MARGIN - 5;
+	y = SV_MARGIN + 25;
 	txt = horizontal(i, coordSystem);
 	var s = {
 	    "text-anchor":"middle" 
@@ -237,7 +237,7 @@ exports.shapeLabels = function(size, coordSystem) {
 
 	/** Bottom row */
 	x = SV_MARGIN + i * step;
-	y = SV_MARGIN + SV_GRID_SIZE + 15;
+	y = SV_MARGIN + SV_GRID_SIZE - 15;
 	txt = horizontal(i, coordSystem);
 	var s = {
 	    "text-anchor":"middle" 
@@ -247,7 +247,7 @@ exports.shapeLabels = function(size, coordSystem) {
     for ( var j = 1; j <= size; j++ ) {
 
 	/** Left column */
-	x = SV_MARGIN;
+	x = SV_MARGIN + 25;
 	y = SV_MARGIN + j * step;
 	txt = vertical(j, coordSystem, size);
 	var s = {
@@ -257,7 +257,7 @@ exports.shapeLabels = function(size, coordSystem) {
 	ret.push({type:"text", x:x, y:y, txt:txt, style:s});
 
 	/** Right column */
-	x = SV_MARGIN + SV_GRID_SIZE;
+	x = SV_MARGIN + SV_GRID_SIZE - 25;
 	y = SV_MARGIN + j * step;
 	txt = vertical(j, coordSystem, size);
 	var s = {
