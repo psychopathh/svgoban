@@ -131,9 +131,9 @@ exports.shapeGrid = function(size) {
     var ret = [];
 
     var s = {
-	"stroke-width":1, 
-	"shape-rendering":"crispEdges",
-	"vector-effect":"non-scaling-stroke"
+	"strokeWidth":1, 
+	"shapeRendering":"crispEdges",
+	"vectorEffect":"non-scaling-stroke"
     };
 
     var d = "";
@@ -231,7 +231,7 @@ exports.shapeLabels = function(size, coordSystem) {
 	y = SV_MARGIN + 25;
 	txt = horizontal(i, coordSystem);
 	var s = {
-	    "text-anchor":"middle" 
+	    "textAnchor":"middle" 
 	};
 	ret.push({type:"text", x:x, y:y, txt:txt, style:s});
 
@@ -240,7 +240,7 @@ exports.shapeLabels = function(size, coordSystem) {
 	y = SV_MARGIN + SV_GRID_SIZE - 15;
 	txt = horizontal(i, coordSystem);
 	var s = {
-	    "text-anchor":"middle" 
+	    "textAnchor":"middle" 
 	};
 	ret.push({type:"text", x:x, y:y, txt:txt, style:s});
     }
@@ -251,8 +251,8 @@ exports.shapeLabels = function(size, coordSystem) {
 	y = SV_MARGIN + j * step;
 	txt = vertical(j, coordSystem, size);
 	var s = {
-	    "text-anchor":"end", 
-	    "dominant-baseline":"central"
+	    "textAnchor":"end", 
+	    "dominantBaseline":"central"
 	};
 	ret.push({type:"text", x:x, y:y, txt:txt, style:s});
 
@@ -261,8 +261,8 @@ exports.shapeLabels = function(size, coordSystem) {
 	y = SV_MARGIN + j * step;
 	txt = vertical(j, coordSystem, size);
 	var s = {
-	    "text-anchor":"start", 
-	    "dominant-baseline":"central"
+	    "textAnchor":"start", 
+	    "dominantBaseline":"central"
 	};
 	ret.push({type:"text", x:x, y:y, txt:txt, style:s});
     }
@@ -396,8 +396,8 @@ exports.mapMarkers = function(size, markers, positions, className) {
 	    cls = "on" + (positions[k] || "white");
 	    var txt = markers[k];
 	    var s = {
-		"text-anchor":"middle", 
-		"dominant-baseline":"central"
+		"textAnchor":"middle", 
+		"dominantBaseline":"central"
 	    };
 	    ret.push({type:"text", x:x, y:y, txt:txt, style:s});
 	}
@@ -462,8 +462,8 @@ exports.shapeMarkers = function(size, markers, positions, className) {
 	    cls = "on" + (positions[k] || "white");
 	    var txt = markers[k];
 	    var s = {
-		"text-anchor":"middle", 
-		"dominant-baseline":"central"
+		"textAnchor":"middle", 
+		"dominantBaseline":"central"
 	    };
 	    ret.push({type:"text", x:x, y:y, txt:txt, style:s});
 	}
