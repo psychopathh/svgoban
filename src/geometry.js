@@ -111,8 +111,8 @@ exports.shapeBackground = function(noMargin) {
 	offset = SV_MARGIN + SV_BORDER_SHRINK;
 	sz = SV_GRID_SIZE - 2*SV_BORDER_SHRINK;
     } else {
-	offset = 30;
-	sz = SV_GRID_SIZE + 2*SV_MARGIN - 60;
+	offset = 0;
+	sz = SV_GRID_SIZE + 2*SV_MARGIN;
     }
     ret.push({type:"rect", class:cls, x:offset, y:offset, width:sz, height:sz});
     return ret;
